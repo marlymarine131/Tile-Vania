@@ -7,11 +7,16 @@ using UnityEngine.InputSystem;
 public class input : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
+    [SerializeField] float jumpHeight = 10f;
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
+    Animator myAnimator;
+    CapsuleCollider2D myCapsuleCollider;
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
+        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -34,10 +39,25 @@ public class input : MonoBehaviour
     {
         Vector2 playerVelocity = new Vector2(moveInput.x * speed, myRigidbody.velocity.y);
         myRigidbody.velocity = playerVelocity;
+
+        bool turnSigh = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+        myAnimator.SetBool("isRunning", turnSigh);
     }
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+    }
+    void OnJump(InputValue value)
+    {
+        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            return;
+        }
+        if (value.isPressed)
+        {
+            myRigidbody.velocity += new Vector2(0f, jumpHeight);
+
+        }
     }
 }
