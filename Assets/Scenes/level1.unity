@@ -128807,6 +128807,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5905720658651791654, guid: a9fcba96d3cc3f741bced16ac011d91c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327230374001017121, guid: a9fcba96d3cc3f741bced16ac011d91c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8341971167832565232, guid: a9fcba96d3cc3f741bced16ac011d91c, type: 3}
       propertyPath: m_Name
       value: player
@@ -128862,6 +128870,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8341971167832565232, guid: a9fcba96d3cc3f741bced16ac011d91c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6212985143362416486}
+    - targetCorrespondingSourceObject: {fileID: 8341971167832565232, guid: a9fcba96d3cc3f741bced16ac011d91c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6212985143362416487}
   m_SourcePrefab: {fileID: 100100000, guid: a9fcba96d3cc3f741bced16ac011d91c, type: 3}
 --- !u!1 &6212985143362416485 stripped
 GameObject:
@@ -128894,7 +128905,20 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6212985143362416487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6212985143362416485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17dd77725d0ca134390d380a0f8db1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
