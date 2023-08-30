@@ -8,21 +8,25 @@ public class input : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
     [SerializeField] float jumpHeight = 10f;
+    [SerializeField] float climpSpeed = 5f;
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
     CapsuleCollider2D myCapsuleCollider;
+    float GravityScaleAtStart;
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        GravityScaleAtStart = myRigidbody.gravityScale;
     }
 
     void Update()
     {
         run();
         slipChar();
+        climpLadder();
     }
 
     private void slipChar()
@@ -52,12 +56,26 @@ public class input : MonoBehaviour
     {
         if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
-            return;
+            return; 
         }
         if (value.isPressed)
         {
             myRigidbody.velocity += new Vector2(0f, jumpHeight);
 
         }
+    }
+    void climpLadder(){
+        if(!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("ladder")) ){
+            myRigidbody.gravityScale = GravityScaleAtStart;
+            myAnimator.SetBool("isCliming", false);
+
+            return;
+        }
+
+        Vector2 climpVelocity = new Vector2(myRigidbody.velocity.x,moveInput.y * climpSpeed );
+        myRigidbody.velocity = climpVelocity;
+        myRigidbody.gravityScale = 0f;
+        bool turnSigh = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
+        myAnimator.SetBool("isCliming", turnSigh);
     }
 }
