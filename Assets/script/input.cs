@@ -54,7 +54,7 @@ public class input : MonoBehaviour
     }
     void OnJump(InputValue value)
     {
-        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("map")))
         {
             return; 
         }
