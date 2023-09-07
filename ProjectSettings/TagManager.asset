@@ -15,7 +15,7 @@ TagManager:
   - ladder
   - Player
   - Ground
-  - 
+  - trap
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4052710051
+    locked: 0
+  - name: trap
+    uniqueID: 1532660977
     locked: 0
