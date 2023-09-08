@@ -16,7 +16,7 @@ TagManager:
   - Player
   - Ground
   - trap
-  - 
+  - Boucing
   - 
   - 
   - 
@@ -61,4 +61,7 @@ TagManager:
     locked: 0
   - name: trap
     uniqueID: 1532660977
+    locked: 0
+  - name: Boucing
+    uniqueID: 338162249
     locked: 0
