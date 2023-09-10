@@ -17,7 +17,7 @@ TagManager:
   - Ground
   - trap
   - Boucing
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -56,12 +56,15 @@ TagManager:
   - name: Ladder
     uniqueID: 4149700075
     locked: 0
-  - name: Player
-    uniqueID: 4052710051
-    locked: 0
   - name: trap
     uniqueID: 1532660977
     locked: 0
   - name: Boucing
     uniqueID: 338162249
+    locked: 0
+  - name: Player
+    uniqueID: 4052710051
+    locked: 0
+  - name: Enemy
+    uniqueID: 239350385
     locked: 0
