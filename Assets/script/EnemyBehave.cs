@@ -12,7 +12,6 @@ public class EnemyBehave : MonoBehaviour
         rigidBodyEnemy = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         rigidBodyEnemy.velocity = new Vector2(moveSpeed, 0f);

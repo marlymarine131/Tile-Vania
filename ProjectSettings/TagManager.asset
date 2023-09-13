@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - trap
   - Boucing
   - Enemy
-  - 
-  - 
+  - Bullet
+  - Exit
   - 
   - 
   - 
@@ -44,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 1937589707
     locked: 0
+  - name: Bullet
+    uniqueID: 1989035273
+    locked: 0
   - name: Platform
     uniqueID: 4174275489
     locked: 0
@@ -61,6 +65,9 @@ TagManager:
     locked: 0
   - name: Boucing
     uniqueID: 338162249
+    locked: 0
+  - name: Exit
+    uniqueID: 2425951657
     locked: 0
   - name: Player
     uniqueID: 4052710051

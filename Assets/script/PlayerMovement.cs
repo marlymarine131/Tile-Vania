@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class input : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
     [SerializeField] float jumpHeight = 10f;
     [SerializeField] float climpSpeed = 5f;
     [SerializeField] Vector2 deathAnimation  = new Vector2(10f,10f);
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
+
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
@@ -65,7 +68,11 @@ public class input : MonoBehaviour
         bool turnSigh = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("isRunning", turnSigh);
     }
+    void OnFire(InputValue value){
+        if (!isAlive) { return; }
+        Instantiate(bullet, gun.position,transform.rotation);
 
+    }
     void OnMove(InputValue value)
     {
         if (!isAlive) { return; }
@@ -86,6 +93,7 @@ public class input : MonoBehaviour
 
         }
     }
+    
     void climpLadder()
     {
         if (!isAlive) { return; }
